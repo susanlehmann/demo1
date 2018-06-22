@@ -1,0 +1,105 @@
+<nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav navbar-dark bg-dark">
+  <%= link_to image_tag("images.png", alt:"logo", width: '35', height: '35') ,"#",:class => "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ <!-- SideNav slide-o button -->
+ <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+   <li class="nav-item active">
+    <%= link_to "Home", '#' ,:class => "nav-link"%><span class="sr-only">(current)</span>
+   </li>
+   <li class="nav-item">
+    <%= link_to "About", '#' ,:class => "nav-link"%>
+   </li>
+   <li class="nav-item dropdown">
+    <%= link_to "Contact", "#", :class => "nav-link dropdown-toggle",'data-toggle' => 'dropdown','role' => 'button','aria-haspopup' => true ,'aria-expanded' => false %>
+    <div class="dropdown-menu">
+        <%= link_to "Contact to Team-made", "#", :class => "dropdown-item" %>
+        <%= link_to "Contact through email", "#", :class => "dropdown-item" %>
+        <%= link_to "Contact through Social", "#", :class => "dropdown-item" %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "Contact to Manager", "#", :class => "dropdown-item" %>
+    </div>
+   </li>
+  <ul class="nav navbar-nav nav-flex-icons mx-auto">
+    <li class="nav-item">
+        <%= link_to "Mode", '#' ,:class => "nav-link clearfix d-none d-sm-inline-block" %><i class="fa fa-envelope"></i>
+    </li>
+    <li class="nav-item">
+        <%= link_to "Support", '#' ,:class => "nav-link clearfix d-none d-sm-inline-block" %><i class="fa fa-envelope"></i>
+    </li>
+     <div id="bs-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown" style="padding-left: 20px;padding-top: 8px; color: white;">
+          <span href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></span>
+            <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+              <li>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <%= form_for(:session, url: login_path) do |f| %>
+                        <%= f.label :email ,:class => "sr-only" %>
+                        <%= f.email_field :email, class: 'form-control' , placeholeder: 'Email address' %>
+
+                        <%= f.label :password , :class => "sr-only" %>
+                        <%= f.password_field :password, class: 'form-control' , placeholeder: 'Password' %>
+
+                        <%= f.label :remember_me, class: "checkbox inline" do %>
+                         <%= f.check_box :remember_me %>
+                         <span>Remember me</span>
+                        <% end %>
+
+                        <%= f.submit "Sign in", class: "btn btn-success btn-block" %>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            <li class="dropdown-divider"></li>
+              <li>
+                <input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign in with google">
+                <input class="btn btn-primary btn-block" type="button" id="sign-in-facebook" value="Sign in with facebook">
+              </li>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </ul>
+ </div>
+</nav>
+ <div id="myslide" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myslide" data-slide-to="0" class="active"></li>
+      <li data-target="#myslide" data-slide-to="1"></li>
+      <li data-target="#myslide" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner active">
+      <div class="item active">
+        <%= image_tag("1.jpg", alt: "lost angenet" , width: "100%", height: "500") %>
+      </div>
+
+      <!--<div class="item">
+        <%= image_tag("2.jpg", alt: "lost angenet" , width: "100%", height: "300") %>
+      </div>
+
+      <div class="item">
+        <%= image_tag("3.jpg", alt: "lost angenet" , width: "100%", height: "300") %>
+      </div> -->
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myslide" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myslide" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
